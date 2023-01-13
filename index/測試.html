@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>鍵盤事件</title>
+    <script>
+        function init(){
+            var btn=document.getElementById("btn");
+            btn.addEventListener('keypress',function(e){
+                console.log('按下 keypress');
+                console.log('keypress: ',e.key);
+            });
+            btn.addEventListener('keydown',function(e){
+                console.log('按下 keydown');
+                console.log("keydown: ",e.key);
+            })
+            btn.addEventListener('keyup',function(e){
+                console.log("觸發 keyup");
+                console.log("keyup: ",e.key);
+            })
+        }
+
+    </script>
+</head>
+<body onload="init()">// 使用 load 事件，body 載入完成執行 init 函式
+    <input type="text" id="btn">
+</body>
+</html>
